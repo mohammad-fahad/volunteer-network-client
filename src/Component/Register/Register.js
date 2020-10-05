@@ -27,7 +27,7 @@ const Register = () => {
       
     const onSubmit = data => {
         const all = {...data, img}
-       console.log(data);
+       
         fetch('https://volunteer-network-f.herokuapp.com/addTask', {
             method: 'POST',
             headers: {

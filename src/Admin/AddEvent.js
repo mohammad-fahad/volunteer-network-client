@@ -52,8 +52,8 @@ const AddEvent = () => {
             </aside>
             <main style={{ marginLeft: '23vw', width: '70vw', marginTop: '-5vw' }}>
                 <form className="center-alignment" onSubmit={handleSubmit(onSubmit)}>
-                    <label>Event Name</label>
-                    <input className="input-field " name="name" ref={register} /> <br/>
+                    <label >Event Name</label>
+                    <input className="input-field " name="name" required ref={register} /> <br/>
                     <label>Description</label>
                     <input className="input-field " name="Description" ref={register({ pattern: /^[A-Za-z]+$/i })} /> <br/>
                     <label>Event Date</label>
