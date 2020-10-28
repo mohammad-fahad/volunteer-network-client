@@ -6,7 +6,7 @@ A full-stack project with firebase authentication
 An user can select a social activity to participate. Also they will be able schedule their tasks by add a date.
 
 ## Client
-- Client can add activities with date.
+- Client can select activities with date.
 - Clients can get a track of all selected events and can cancel any of the activity anytime.
 
 
