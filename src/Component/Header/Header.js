@@ -41,10 +41,8 @@ const Header = () => {
                 </Navbar>
                 <div className="text-center container pt-5" style={{ marginTop: "10vh" }}>
                     <h3><strong style={{ fontSize: "3rem", paddingTop: "20vh" }}>I GROW BY HELPING PEOPLE IN NEED.</strong></h3>
-                    <div className="d-flex p-3 justify-content-center">
-                        <input type="text" className="form-control" id="search" />
-                        <Button variant="primary" className="pr-5 pl-5" id="click" >Search</Button>
-                    </div>
+
+
                 </div>
            </div>
         </div>
