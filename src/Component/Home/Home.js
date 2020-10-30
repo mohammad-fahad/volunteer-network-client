@@ -8,15 +8,12 @@ import '../../Admin/style.css';
 const Home = () => {
     const {volunteers, setVolunteers} = useContext(UserContext)
    
-    const fetchData = () => {
+    useEffect(() => {
         fetch('https://volunteer-network-f.herokuapp.com/volunteers')
-        .then(res => res.json())
-        .then(data => {
-            setVolunteers(data);
-        })
-    }
-    useEffect (() => {
-        fetchData();
+            .then(res => res.json())
+            .then(data => {
+                setVolunteers(data);
+            })
     }, [])
 
     
@@ -27,11 +24,11 @@ const Home = () => {
                 {
                     volunteers.map(fd =>
 
-                        <Card className="col-md-2 m-3 text-center work-container" key={fd._id} style={{ width: '18rem', border: 'none', borderRadius: '15px', cursor: 'pointer' }}>
+                        <Card className="col-md-2 m-3 text-center work-container" key={fd._id} style={{ padding: '0', width: '18rem', border: 'none', borderRadius: '15px', cursor: 'pointer', alignItems: 'center' }}>
                             <Link style={{textDecoration: 'none'}} to={`/register/${fd._id}`}>
-                            <Card.Img variant="top" src={fd.img} />
-                            <Card.Body className=" work-title" >
-                                <Card.Title className="text-white" >{fd.name}</Card.Title>
+                                <Card.Img style={{ width: '100%' }} variant="top" src={fd.img} />
+                                <Card.Body className=" work-title" style={{ borderRadius: '0px 0px 10px' }} >
+                                    <Card.Title className="text-white" >{fd.name}</Card.Title>
                             </Card.Body>
                             </Link>
                         </Card>
