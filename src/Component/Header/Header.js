@@ -8,12 +8,12 @@ import cover from '../../images/cover.png';
 import { UserContext } from '../../App';
 
 
-const Header = () => {
-    const { volunteers, setVolunteers } = useContext(UserContext)
-    // const search = (e) => {
-    //     document.getElementById("search").value = volunteers.find(fd => fd.name.toLoverCase() === document.getElementById("search").value.toLoverCase())
-    //     return
-    // }
+const Header = ({ search, setSearch, searchBtn, setSearchBtn }) => {
+    const handleClick = (e) => {
+        e.preventDefault();
+        setSearchBtn(search.toLowerCase());
+        document.getElementById('input').value = '';
+    }
     return (
         <div >
             <img style={{ height: '50vh', width: '100%', opacity: '0.6', position: 'absolute' }} src={cover} alt="" />
@@ -41,7 +41,10 @@ const Header = () => {
                 </Navbar>
                 <div className="text-center container pt-5" style={{ marginTop: "10vh" }}>
                     <h3><strong style={{ fontSize: "3rem", paddingTop: "20vh" }}>I GROW BY HELPING PEOPLE IN NEED.</strong></h3>
-
+                    <div className="d-flex flex-wrap justify-content-center py-5 container">
+                        <input className="input-field form-control" id="input" onChange={(e) => setSearch(e.target.value.toLowerCase())} name="search" placeholder="Search for volunteers work" />
+                        <Button variant="success" className="px-5" onClick={handleClick}>Search</Button>
+                    </div>
 
                 </div>
            </div>
